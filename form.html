@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aasra Paramparik Swad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins', sans-serif;
+    }
+
+    body{
+      background: linear-gradient(135deg,#fff7cc,#ffe082);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:30px 15px;
+    }
+
+    .container{
+      width:100%;
+      max-width:550px;
+      background:#fff;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+      animation:fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* TOP SECTION */
+
+    .top-section{
+      background: linear-gradient(135deg,#ffcc00,#ff9800);
+      text-align:center;
+      padding:35px 25px;
+      color:white;
+    }
+
+    .top-section .emoji{
+      font-size:50px;
+      display:block;
+      margin-bottom:10px;
+    }
+
+    .top-section h1{
+      font-size:32px;
+      margin-bottom:8px;
+      font-weight:700;
+    }
+
+    .top-section p{
+      font-size:15px;
+      opacity:0.95;
+    }
+
+    /* FORM */
+
+    .form-section{
+      padding:35px 30px;
+    }
+
+    .input-box{
+      margin-bottom:22px;
+    }
+
+    .input-box label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+      color:#444;
+      font-size:15px;
+    }
+
+    .input-box input,
+    .input-box textarea{
+      width:100%;
+      padding:14px 16px;
+      border:2px solid #ececec;
+      border-radius:14px;
+      background:#fafafa;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .input-box input:focus,
+    .input-box textarea:focus{
+      border-color:#ffb300;
+      background:#fff;
+      outline:none;
+      box-shadow:0 0 8px rgba(255,179,0,0.3);
+    }
+
+    textarea{
+      resize:none;
+      height:110px;
+    }
+
+    .submit-btn{
+      width:100%;
+      border:none;
+      padding:15px;
+      border-radius:14px;
+      background: linear-gradient(135deg,#ff9800,#ff5722);
+      color:white;
+      font-size:17px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      letter-spacing:0.5px;
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(255,87,34,0.35);
+    }
+
+    .error{
+      color:red;
+      font-size:13px;
+      margin-top:5px;
+    }
+
+    .success-message{
+      display:none;
+      margin-top:20px;
+      background:#e8f5e9;
+      color:#2e7d32;
+      padding:14px;
+      border-radius:12px;
+      text-align:center;
+      font-weight:600;
+    }
+
+    .footer{
+      text-align:center;
+      padding:18px;
+      background:#fff8e7;
+      font-size:13px;
+      color:#666;
+    }
+
+    @media(max-width:600px){
+
+      .top-section h1{
+        font-size:26px;
+      }
+
+      .form-section{
+        padding:25px 20px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+
+    <div class="top-section">
+
+      <span class="emoji">🍋</span>
+
+      <h1>Aasra Paramparik Swad</h1>
+
+      <p>Homemade Sweet Lemon Pickle</p>
+
+    </div>
+
+    <!-- FORM -->
+
+    <div class="form-section">
+
+      <form
+
+        id="orderForm"
+
+        action="https://docs.google.com/forms/d/e/1FAIpQLSffexytjVpi3txuouTkNzZvj4_IsivYfDQHaBPmy5njaI6q1Q/formResponse"
+
+        method="POST"
+
+        target="hidden_iframe"
+
+      >
+
+        <!-- NAME -->
+
+        <div class="input-box">
+
+          <label>Full Name</label>
+
+          <input
+            type="text"
+            id="name"
+            name="entry.1627472003"
+            placeholder="Enter your full name"
+          >
+
+          <div class="error" id="nameError"></div>
+
+        </div>
+
+        <!-- MOBILE -->
+
+        <div class="input-box">
+
+          <label>Mobile Number</label>
+
+          <input
+            type="text"
+            id="mobile"
+            name="entry.1628357039"
+            placeholder="Enter 10-digit mobile number"
+          >
+
+          <div class="error" id="mobileError"></div>
+
+        </div>
+
+        <!-- ADDRESS -->
+
+        <div class="input-box">
+
+          <label>Address</label>
+
+          <textarea
+            id="address"
+            name="entry.1393430287"
+            placeholder="Enter delivery address"
+          ></textarea>
+
+          <div class="error" id="addressError"></div>
+
+        </div>
+
+        <!-- QUANTITY -->
+
+        <div class="input-box">
+
+          <label>Quantity (Minimum 250g)</label>
+
+          <input
+            type="number"
+            id="quantity"
+            name="entry.152396418"
+            placeholder="Enter quantity in grams"
+            min="250"
+          >
+
+          <div class="error" id="quantityError"></div>
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div class="input-box">
+
+          <label>Any Message / Note</label>
+
+          <textarea
+            id="message"
+            name="entry.419616060"
+            placeholder="Write your note here..."
+          ></textarea>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button type="submit" class="submit-btn">
+          Place Order 🍋
+        </button>
+
+        <!-- SUCCESS MESSAGE -->
+
+        <div class="success-message" id="successMessage">
+          🎉 Order Submitted Successfully!
+        </div>
+
+      </form>
+
+      <!-- HIDDEN IFRAME -->
+
+      <iframe
+        name="hidden_iframe"
+        style="display:none;">
+      </iframe>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+      Made with ❤️ Traditional Homemade Taste
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    const form = document.getElementById("orderForm");
+
+    form.addEventListener("submit", function(e){
+
+      let isValid = true;
+
+      // INPUT VALUES
+
+      let name =
+      document.getElementById("name").value.trim();
+
+      let mobile =
+      document.getElementById("mobile").value.trim();
+
+      let address =
+      document.getElementById("address").value.trim();
+
+      let quantity =
+      document.getElementById("quantity").value.trim();
+
+      // CLEAR ERRORS
+
+      document.getElementById("nameError").innerText = "";
+
+      document.getElementById("mobileError").innerText = "";
+
+      document.getElementById("addressError").innerText = "";
+
+      document.getElementById("quantityError").innerText = "";
+
+      // NAME VALIDATION
+
+      if(name === ""){
+
+        document.getElementById("nameError").innerText =
+        "Please enter your name";
+
+        isValid = false;
+      }
+
+      // MOBILE VALIDATION
+
+      let mobilePattern = /^[0-9]{10}$/;
+
+      if(!mobilePattern.test(mobile)){
+
+        document.getElementById("mobileError").innerText =
+        "Enter valid 10-digit mobile number";
+
+        isValid = false;
+      }
+
+      // ADDRESS VALIDATION
+
+      if(address === ""){
+
+        document.getElementById("addressError").innerText =
+        "Please enter your address";
+
+        isValid = false;
+      }
+
+      // QUANTITY VALIDATION
+
+      if(quantity === "" || quantity < 250){
+
+        document.getElementById("quantityError").innerText =
+        "Minimum quantity should be 250g";
+
+        isValid = false;
+      }
+
+      // STOP FORM IF INVALID
+
+      if(!isValid){
+
+        e.preventDefault();
+
+        return;
+      }
+
+      // SUCCESS MESSAGE
+
+      document.getElementById("successMessage").style.display =
+      "block";
+
+      // RESET FORM AFTER SUBMIT
+
+      setTimeout(() => {
+
+        form.reset();
+
+      }, 500);
+
+      // HIDE SUCCESS MESSAGE
+
+      setTimeout(() => {
+
+        document.getElementById("successMessage").style.display =
+        "none";
+
+      }, 4000);
+
+    });
+
+  </script>
+
+</body>
+</html>
